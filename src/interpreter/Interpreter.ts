@@ -105,6 +105,7 @@ export class Interpreter {
    */
   interpretAndCombineSchema(schema: InterpreterSchemaType | undefined, currentModel: CommonModel, rootSchema: any, interpreterOptions: InterpreterOptions = Interpreter.defaultInterpreterOptions): void {
     if (typeof schema !== 'object') {return;}
+    // console.log("schema", schema)
     const model = this.interpret(schema, interpreterOptions);
     if (model !== undefined) {
       CommonModel.mergeCommonModels(currentModel, model, rootSchema);

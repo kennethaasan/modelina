@@ -311,6 +311,7 @@ export class JsonSchemaInputProcessor extends AbstractInputProcessor {
    * @param schema to simplify to common model
    */
   static convertSchemaToCommonModel(schema: Draft4Schema | Draft6Schema | Draft7Schema | SwaggerV2Schema| AsyncapiV2Schema | boolean): CommonModel {
+    // console.log('JsonSchemaInputProcessor.convertSchemaToCommonModel', schema);
     const interpreter = new Interpreter();
     const model = interpreter.interpret(schema);
     if (model === undefined) {

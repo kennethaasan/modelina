@@ -11,6 +11,7 @@ import { inferTypeFromValue } from './Utils';
  */
 export default function interpretEnum(schema: InterpreterSchemaType, model: CommonModel): void {
   if (typeof schema === 'boolean' || schema.enum === undefined) {return;}
+  console.log('interpretEnum', schema);
   for (const enumValue of schema.enum) {
     if (schema.type === undefined) {
       const inferredType = inferTypeFromValue(enumValue);
